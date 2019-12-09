@@ -25,6 +25,13 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 # Inherit from river device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
+# Blacklist so we can dynamically set
+PRODUCT_SYSTEM_PROPERTY_BLACKLIST += \
+    ro.carrier
+
+PRODUCT_VENDOR_PROPERTY_BLACKLIST += \
+    ro.carrier
+
 PRODUCT_BRAND := motorola
 PRODUCT_DEVICE := river
 PRODUCT_MANUFACTURER := motorola
